@@ -104,7 +104,7 @@ Modo Escuro
 1. Clone este repositório ou faça o download do projeto em formato ZIP.
 
 ```bash
-git clone https://github.com/marcelogomes7777/KM-Lucrativo.git
+git clone https://github.com/marcelogomesads/KM-Lucrativo
 
 2. Abra o arquivo **index.html** em qualquer navegador.
 
