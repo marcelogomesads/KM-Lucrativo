@@ -1,0 +1,890 @@
+/* ==================================================
+   KM LUCRATIVO
+   style.css
+   Versão 1.0
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --cor-primaria:#2563eb;
+    --cor-secundaria:#1d4ed8;
+
+    --verde:#16a34a;
+    --amarelo:#ca8a04;
+    --vermelho:#dc2626;
+
+    --bg:#f4f7fb;
+    --card:#ffffff;
+
+    --texto:#222;
+    --texto-sec:#666;
+
+    --borda:#e5e7eb;
+
+    --sombra:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+body.dark{
+
+    --bg:#111827;
+
+    --card:#1f2937;
+
+    --texto:#f9fafb;
+
+    --texto-sec:#d1d5db;
+
+    --borda:#374151;
+
+    --sombra:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--texto);
+
+    font-family:"Poppins",sans-serif;
+
+    transition:.3s;
+
+}
+
+header{
+
+    background:var(--card);
+
+    box-shadow:var(--sombra);
+
+    padding:22px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.logo i{
+
+    font-size:42px;
+
+    color:var(--cor-primaria);
+
+}
+
+.logo h1{
+
+    font-size:28px;
+
+}
+
+.logo p{
+
+    color:var(--texto-sec);
+
+    font-size:14px;
+
+}
+
+.btn-dark{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--cor-primaria);
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.btn-dark:hover{
+
+    transform:rotate(180deg);
+
+}
+
+main{
+
+    width:min(1200px,92%);
+
+    margin:35px auto;
+
+}
+
+.container{
+
+    background:var(--card);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:28px;
+
+    box-shadow:var(--sombra);
+
+    animation:fade .5s;
+
+}
+
+.container h2{
+
+    margin-bottom:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--cor-primaria);
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:18px;
+
+}
+
+.campo{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.campo label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.campo input{
+
+    padding:12px;
+
+    border:1px solid var(--borda);
+
+    border-radius:10px;
+
+    background:var(--bg);
+
+    color:var(--texto);
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.campo input:focus{
+
+    border-color:var(--cor-primaria);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+.oculto{
+
+    display:none;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/*==================================================
+  BOTÕES
+==================================================*/
+
+.acoes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 28px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.30s;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.btn-principal{
+
+    background:var(--cor-primaria);
+
+    color:#fff;
+
+}
+
+.btn-principal:hover{
+
+    background:var(--cor-secundaria);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secundario{
+
+    background:var(--card);
+
+    color:var(--texto);
+
+    border:2px solid var(--cor-primaria);
+
+}
+
+.btn-secundario:hover{
+
+    background:var(--cor-primaria);
+
+    color:#fff;
+
+}
+
+/*==================================================
+  PAINEL FINANCEIRO
+==================================================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+.card{
+
+    background:var(--bg);
+
+    border-radius:16px;
+
+    padding:22px;
+
+    border:1px solid var(--borda);
+
+    text-align:center;
+
+    transition:.30s;
+
+    animation:fade .45s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--sombra);
+
+}
+
+.card h3{
+
+    font-size:15px;
+
+    color:var(--texto-sec);
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--cor-primaria);
+
+}
+
+.card.destaque{
+
+    border:2px solid var(--verde);
+
+}
+
+.card.destaque p{
+
+    color:var(--verde);
+
+    font-size:32px;
+
+}
+
+/*==================================================
+  DIAGNÓSTICO
+==================================================*/
+
+.diagnostico-box{
+
+    background:var(--bg);
+
+    border-left:6px solid var(--cor-primaria);
+
+    border-radius:12px;
+
+    padding:22px;
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    line-height:1.6;
+
+    transition:.30s;
+
+}
+
+/*==================================================
+  RESULTADO DA CORRIDA
+==================================================*/
+
+#resultadoCorrida{
+
+    margin-top:30px;
+
+}
+/*==================================================
+  RODAPÉ
+==================================================*/
+
+footer{
+
+    margin-top:40px;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    color:var(--texto-sec);
+
+    font-size:14px;
+
+}
+
+/*==================================================
+  ANIMAÇÕES
+==================================================*/
+
+.card,
+.container,
+.btn{
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        color .3s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+.btn i{
+
+    font-size:16px;
+
+}
+
+/*==================================================
+  SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--cor-primaria);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--cor-secundaria);
+
+}
+
+/*==================================================
+  RESPONSIVIDADE
+==================================================*/
+
+@media (max-width:900px){
+
+    header{
+
+        padding:20px;
+
+        flex-direction:column;
+
+        gap:18px;
+
+        text-align:center;
+
+    }
+
+    .logo{
+
+        flex-direction:column;
+
+    }
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    main{
+
+        width:95%;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .acoes{
+
+        flex-direction:column;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .logo h1{
+
+        font-size:24px;
+
+    }
+
+    .logo p{
+
+        font-size:13px;
+
+    }
+
+    .card p{
+
+        font-size:24px;
+
+    }
+
+}
+
+/*==================================================
+  CLASSES DO DIAGNÓSTICO
+==================================================*/
+
+.sucesso{
+
+    border-left:6px solid #16a34a;
+
+}
+
+.alerta{
+
+    border-left:6px solid #ca8a04;
+
+}
+
+.erro{
+
+    border-left:6px solid #dc2626;
+
+}
+
+.excelente{
+
+    border-left:6px solid #2563eb;
+
+}
+
+.dica{
+
+    display:block;
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    color:var(--texto-sec);
+
+    font-style:italic;
+
+}
+
+/*==================================================
+RELATÓRIO PDF
+==================================================*/
+
+.relatorio-pdf,
+.relatorio-pdf *{
+
+    color:#222 !important;
+
+}
+
+
+.relatorio-pdf .pdf-header,
+.relatorio-pdf .pdf-header *{
+
+    color:#ffffff !important;
+
+}
+
+
+.relatorio-pdf .destaque-pdf #pdfValorKm{
+
+    color:#16a34a !important;
+
+}
+
+
+.relatorio-pdf .pdf-card h2{
+
+    color:#2563eb !important;
+
+}
+
+
+.relatorio-pdf .pdf-footer{
+
+    color:#666 !important;
+
+}
+
+.relatorio-pdf{
+
+    width:900px;
+
+    background:#ffffff;
+
+    color:#222;
+
+    padding:40px;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+.pdf-header{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    margin-bottom:30px;
+
+}
+
+.pdf-header h1{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.pdf-header p{
+
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+.pdf-card{
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    margin-bottom:22px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+
+}
+
+.pdf-card h2{
+
+    color:#2563eb;
+
+    font-size:19px;
+
+    margin-bottom:18px;
+
+    border-bottom:2px solid #eef3ff;
+
+    padding-bottom:10px;
+
+}
+
+.pdf-card p{
+
+    font-size:15px;
+
+    padding:8px 0;
+
+    border-bottom:1px dashed #ececec;
+
+}
+
+.pdf-card p:last-child{
+
+    border-bottom:none;
+
+}
+
+.destaque-pdf{
+
+    background:#eff6ff;
+
+    border:3px solid #2563eb;
+
+    text-align:center;
+
+}
+
+.destaque-pdf h2{
+
+    border:none;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+}
+
+.destaque-pdf #pdfValorKm{
+
+    font-size:25px;
+
+    font-weight:700;
+
+    color:#16a34a;
+
+    padding:6px 0;
+
+    border:none;
+
+}
+
+.pdf-footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+.pdf-footer hr{
+
+    border:none;
+
+    border-top:2px solid #e5e7eb;
+
+    margin-bottom:18px;
+
+}
+
+.relatorio-pdf .pdf-header{
+
+    display:block !important;
+
+    width:100%;
+
+    background:#2563eb !important;
+
+    color:white !important;
+
+    padding:35px !important;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.relatorio-pdf .pdf-header h1{
+
+    color:white !important;
+
+    font-size:34px;
+
+    margin:0 0 8px 0;
+
+}
+
+
+.relatorio-pdf .pdf-header p{
+
+    color:white !important;
+
+    font-size:18px;
+
+    margin:0;
+
+}
+
+/*==================================================
+  FIM DO CSS
+==================================================*/

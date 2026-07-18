@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KM Lucrativo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-car-side"></i>
+
+        <div>
+
+            <h1>KM Lucrativo</h1>
+
+            <p>Transformando quilômetros em lucro.</p>
+
+        </div>
+
+    </div>
+
+    <button id="modoEscuro" class="btn-dark">
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+</header>
+
+<main>
+
+<section class="container">
+
+<h2>
+
+    <i class="fa-solid fa-wallet"></i>
+
+    Custos Mensais
+
+</h2>
+
+<div class="grid">
+
+<div class="campo">
+
+<label>Parcela / Aluguel (Mensal)</label>
+
+<input
+type="number"
+id="parcela"
+placeholder="0,00">
+
+</div>
+
+<div class="campo">
+
+<label>Seguro (Mensal)</label>
+
+<input
+type="number"
+id="seguro"
+placeholder="0,00">
+
+</div>
+
+<div class="campo">
+
+<label>IPVA (Anual)</label>
+
+<input
+type="number"
+id="ipva"
+placeholder="0,00">
+
+<small class="dica">
+O sistema divide automaticamente por 12.
+</small>
+
+</div>
+
+<div class="campo">
+
+<label>Internet (Mensal)</label>
+
+<input
+type="number"
+id="internet"
+placeholder="0,00">
+
+</div>
+
+<div class="campo">
+
+<label>Alimentação (Por Dia)</label>
+
+<input
+type="number"
+id="alimentacao"
+placeholder="0,00">
+
+<small class="dica">
+Ex.: quanto você gasta em um dia de trabalho.
+</small>
+
+</div>
+
+<div class="campo">
+
+<label>Lavagem (Mensal)</label>
+
+<input
+type="number"
+id="lavagem"
+placeholder="0,00">
+
+</div>
+
+<div class="campo">
+
+<label>Despesas Adicionais (Mensal)</label>
+
+<input
+type="number"
+id="extras"
+placeholder="0,00">
+
+</div>
+
+<div class="campo">
+
+<label>Lucro Mensal Desejado</label>
+
+<input
+type="number"
+id="lucro"
+placeholder="3000">
+
+<small class="dica">
+Quanto você deseja ganhar líquido por mês.
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2>
+
+<i class="fa-solid fa-gas-pump"></i>
+
+Custos por Quilômetro
+
+</h2>
+
+<div class="grid">
+
+<div class="campo">
+
+<label>Preço do Combustível</label>
+
+<input
+type="number"
+id="valorCombustivel"
+step="0.01"
+placeholder="6.39">
+
+</div>
+
+<div class="campo">
+
+<label>Consumo (Km/L)</label>
+
+<input
+type="number"
+id="consumo"
+step="0.1"
+placeholder="12">
+
+</div>
+
+<div class="campo">
+
+<label>Troca de Óleo / Revisão</label>
+
+<input
+type="number"
+id="valorOleo"
+placeholder="350">
+
+</div>
+
+<div class="campo">
+
+<label>Troca a cada (Km)</label>
+
+<input
+type="number"
+id="trocaOleoKm"
+placeholder="10000">
+
+</div>
+<div class="campo">
+
+<label>Valor dos Pneus</label>
+
+<input
+type="number"
+id="valorPneus"
+placeholder="2400">
+
+</div>
+
+<div class="campo">
+
+<label>Durabilidade dos Pneus (Km)</label>
+
+<input
+type="number"
+id="vidaPneus"
+placeholder="50000">
+
+</div>
+
+<div class="campo">
+
+<label>Valor das Pastilhas</label>
+
+<input
+type="number"
+id="valorPastilhas"
+placeholder="300">
+
+</div>
+
+<div class="campo">
+
+<label>Troca das Pastilhas (Km)</label>
+
+<input
+type="number"
+id="vidaPastilhas"
+placeholder="30000">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2>
+
+<i class="fa-solid fa-road"></i>
+
+Rotina de Trabalho
+
+</h2>
+
+<div class="grid">
+
+<div class="campo">
+
+<label>Dias Trabalhados por Mês</label>
+
+<input
+type="number"
+id="diasMes"
+placeholder="26">
+
+</div>
+
+<div class="campo">
+
+<label>Km Rodados por Dia</label>
+
+<input
+type="number"
+id="kmDia"
+placeholder="200">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="acoes">
+
+<button
+id="btnCalcular"
+class="btn btn-principal">
+
+<i class="fa-solid fa-calculator"></i>
+
+Calcular Custos
+
+</button>
+
+ <button
+    id="btnPDF"
+    class="btn btn-secundario">
+
+        <i class="fa-solid fa-file-pdf"></i>
+        Exportar PDF
+
+    </button>
+
+</section>
+
+<section
+id="painelFinanceiro"
+class="painel oculto">
+
+<h2>
+
+<i class="fa-solid fa-chart-line"></i>
+
+Painel Financeiro
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Custo Mensal</h3>
+
+<p id="custoMensal">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Custo por Km</h3>
+
+<p id="custoReal">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Combustível por Km</h3>
+
+<p id="combustivelKm">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Meta Diária</h3>
+
+<p id="metaDiaria">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Meta Semanal</h3>
+
+<p id="metaSemanal">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Meta Mensal</h3>
+
+<p id="metaMensal">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card destaque">
+
+<h3>Valor Mínimo por Km</h3>
+
+<p id="valorKm">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section
+id="diagnostico"
+class="container oculto">
+
+<h2>
+
+<i class="fa-solid fa-stethoscope"></i>
+
+Diagnóstico Inteligente
+
+</h2>
+
+<div class="diagnostico-box">
+
+<p id="mensagemDiagnostico">
+
+Preencha os dados e clique em calcular.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<h2>
+
+<i class="fa-solid fa-car-side"></i>
+
+Simulador de Corrida
+
+</h2>
+
+<div class="grid">
+
+<div class="campo">
+
+<label>Valor da Corrida (R$)</label>
+
+<input
+type="number"
+id="valorCorrida"
+step="0.01"
+placeholder="25.00">
+
+</div>
+
+<div class="campo">
+
+<label>Quilômetros da Corrida</label>
+
+<input
+type="number"
+id="kmCorrida"
+step="0.1"
+placeholder="12">
+
+</div>
+
+</div>
+
+<div class="acoes">
+
+<button
+id="btnSimular"
+class="btn btn-principal">
+
+<i class="fa-solid fa-car-side"></i>
+
+Simular Corrida
+
+</button>
+
+</div>
+
+<div
+id="resultadoCorrida"
+class="cards oculto">
+
+<div class="card">
+
+<h3>Custo da Corrida</h3>
+
+<p id="custoCorrida">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Lucro Líquido</h3>
+
+<p id="lucroCorrida">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Lucro por Km</h3>
+
+<p id="lucroKm">
+
+R$ 0,00
+
+</p>
+
+</div>
+
+<div class="card destaque">
+
+<h3>Resultado</h3>
+
+<p id="statusCorrida">
+
+Aguardando...
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<div id="relatorioPDF" class="relatorio-pdf" style="position:absolute; left:-10000px; top:-10000px;">
+
+<div class="pdf-header">
+    <h1>🚗 KM Lucrativo</h1>
+    <p>Relatório Financeiro</p>
+</div>
+
+<div class="pdf-card destaque-pdf">
+
+    <h2>Valor Mínimo por Km</h2>
+
+    <p id="pdfValorKm"></p>
+
+</div>
+
+<div class="pdf-card">
+
+    <h2>Painel Financeiro</h2>
+
+    <p id="pdfCustoMensal"></p>
+
+    <p id="pdfCustoKm"></p>
+
+    <p id="pdfCombustivel"></p>
+
+</div>
+
+<div class="pdf-card">
+
+    <h2>Metas</h2>
+
+    <p id="pdfMetaDiaria"></p>
+
+    <p id="pdfMetaSemanal"></p>
+
+    <p id="pdfMetaMensal"></p>
+
+</div>
+
+<div class="pdf-footer">
+
+    <hr>
+
+    <p><strong>KM Lucrativo v1.0</strong></p>
+
+    <p id="pdfData"></p>
+
+    <p>Transformando quilômetros em lucro.</p>
+
+</div>  
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 <strong>KM Lucrativo</strong>
+
+<br>
+
+Transformando quilômetros em lucro.
+
+</p>
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
